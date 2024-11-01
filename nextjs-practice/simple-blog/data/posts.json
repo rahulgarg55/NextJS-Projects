@@ -1,0 +1,15 @@
+[
+    {
+      "id": "1",
+      "title": "Learning Next.js",
+      "content": "Next.js is a powerful framework for building React apps...",
+      "author": "Jane Doe"
+    },
+    {
+      "id": "2",
+      "title": "Understanding Static Generation",
+      "content": "Static generation is a great way to improve site performance...",
+      "author": "John Smith"
+    }
+  ]
+  
