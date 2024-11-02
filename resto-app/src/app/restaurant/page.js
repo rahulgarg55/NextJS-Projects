@@ -2,6 +2,7 @@
 import RestaurantHeader from "../_components/RestaurantHeader";
 import RestaurantLogin from "../_components/restaurantLogin";
 import RestaurantSignUp from "../_components/restaurantSignUp";
+import RestaurantFooter from "../_components/RestaurantFooter";
 import "./style.css";
 import { useState } from "react";
 const Restaurant = () => {
@@ -18,6 +19,7 @@ const Restaurant = () => {
         </button>
       </div>
       </div>
+      <RestaurantFooter />
     </>
   );
 };
