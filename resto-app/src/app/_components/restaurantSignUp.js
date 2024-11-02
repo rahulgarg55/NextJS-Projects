@@ -30,6 +30,11 @@ const RestaurantSignUp = () => {
     });
     result = await result.json();
     console.log("result", result);
+    if(result.success) {
+      alert("Signup successful");
+    } else {
+      alert("Signup failed");
+    }
   };
   return (
     <>
