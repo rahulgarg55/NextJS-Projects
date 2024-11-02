@@ -6,7 +6,17 @@ const RestaurantSignUp = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [contact, setContact] = useState("");
-  const [city, setCity] = useState(""); 
+  const [city, setCity] = useState("");
+
+  const handleSignup = () => {
+    console.log("email", email);
+    console.log("password", password);
+    console.log("confirmPassword", confirmPassword);
+    console.log("name", name);
+    console.log("address", address);
+    console.log("contact", contact);
+    console.log("city", city);
+  };
   return (
     <>
       <h3> SignUp</h3>
@@ -74,7 +84,9 @@ const RestaurantSignUp = () => {
         />
       </div>
       <div className="input-wrapper">
-        <button className="input-field">Sign Up</button>
+        <button onClick={handleSignup} className="input-field">
+          Sign Up
+        </button>
       </div>
     </>
   );
