@@ -7,6 +7,7 @@ const RestaurantSignUp = () => {
   const [address, setAddress] = useState("");
   const [contact, setContact] = useState("");
   const [city, setCity] = useState("");
+  const router = useRouter();
 
   const handleSignup = async () => {
     console.log("email", email);
@@ -17,7 +18,7 @@ const RestaurantSignUp = () => {
     console.log("contact", contact);
     console.log("city", city);
 
-    let result = await fetch("http://localhost:3001/api/restaurant", {
+    let response = await fetch("http://localhost:3001/api/restaurant", {
       method: "POST",
       body: JSON.stringify({
         email,
@@ -28,12 +29,14 @@ const RestaurantSignUp = () => {
         city,
       }),
     });
-    result = await result.json();
-    console.log("result", result);
-    if(result.success) {
-      alert("Signup successful");
-    } else {
-      alert("Signup failed");
+    response = await response.json();
+    console.log("response", response);
+    if(response.success) {
+      console.log(response);
+      const {result} = response;
+      delete result.password;
+      localStorage.setItem("restaurantUser",JSON.stringify(result));
+     router.push("/restaurant/dashboard");
     }
   };
   return (

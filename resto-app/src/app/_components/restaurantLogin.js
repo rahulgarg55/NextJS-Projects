@@ -8,9 +8,9 @@ const RestaurantLogin = () => {
       <div className="input-wrapper">
         <input type="password" placeholder="Enter password"className="input-field" />
       </div>
-      <divc className="input-wrapper">
+      <div className="input-wrapper">
         <button className="input-field">Login</button>
-      </divc>
+      </div>
     </>
   );
 };
