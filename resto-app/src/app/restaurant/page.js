@@ -5,7 +5,8 @@ const Restaurant = ()=>{
         <>
         <h1>Restaurant Login/SignUp Page</h1>
        <RestaurantLogin/>
-       <RestaurantSignUp/>  
+       <RestaurantSignUp/>
+       <button>Already Have an Account? SignUp</button>  
         </>
     )
 }
