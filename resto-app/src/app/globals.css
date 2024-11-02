@@ -1,0 +1,18 @@
+.input-wrapper{
+margin:10px;
+}
+.input-field{
+  width:300px;
+  height:30px;
+}
+.button{
+  width: 200px;
+  height:30px;
+}
+.container{
+ text-align: center;
+}
+.button-login{
+  border:0;
+  cursor: pointer;
+}
