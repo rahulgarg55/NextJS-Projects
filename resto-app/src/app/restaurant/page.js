@@ -10,7 +10,7 @@ const Restaurant = () => {
       <h1>Restaurant Login/SignUp Page</h1>
       {login ? <RestaurantLogin /> : <RestaurantSignUp />}
       <div>
-        <button onClick={() => setLogin(!login)}>
+        <button className="button-link" onClick={() => setLogin(!login)}>
           {login ? "Don't Have an Account? SignUp" : "Already have an account?"}
         </button>
       </div>

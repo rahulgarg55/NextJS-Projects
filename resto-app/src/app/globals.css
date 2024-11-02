@@ -12,7 +12,10 @@ margin:10px;
 .container{
  text-align: center;
 }
-.button-login{
+.button-link{
   border:0;
   cursor: pointer;
+  background-color: transparent;
+  color:skyblue;
+  margin:20px;
 }
