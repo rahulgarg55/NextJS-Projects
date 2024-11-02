@@ -1,12 +1,15 @@
 "use client";
+import RestaurantHeader from "../_components/RestaurantHeader";
 import RestaurantLogin from "../_components/restaurantLogin";
 import RestaurantSignUp from "../_components/restaurantSignUp";
+import "./style.css";
 import { useState } from "react";
 const Restaurant = () => {
   const [login, setLogin] = useState(true);
   return (
     <>
     <div className="container">
+        <RestaurantHeader />
       <h1>Restaurant Login/SignUp Page</h1>
       {login ? <RestaurantLogin /> : <RestaurantSignUp />}
       <div>
