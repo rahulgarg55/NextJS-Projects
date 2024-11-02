@@ -8,7 +8,7 @@ const RestaurantSignUp = () => {
   const [contact, setContact] = useState("");
   const [city, setCity] = useState("");
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     console.log("email", email);
     console.log("password", password);
     console.log("confirmPassword", confirmPassword);
@@ -16,6 +16,20 @@ const RestaurantSignUp = () => {
     console.log("address", address);
     console.log("contact", contact);
     console.log("city", city);
+
+    let result = await fetch("http://localhost:3001/api/restaurant", {
+      method: "POST",
+      body: JSON.stringify({
+        email,
+        password,
+        name,
+        address,
+        contact,
+        city,
+      }),
+    });
+    result = await result.json();
+    console.log("result", result);
   };
   return (
     <>

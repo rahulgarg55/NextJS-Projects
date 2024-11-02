@@ -9,3 +9,7 @@ export async function GET(){
     console.log("data",data)
 return NextResponse.json({result:true});
 }
+
+export async function POST(request){
+    return NextResponse.json({result:true});
+}
