@@ -1,4 +1,7 @@
+'use client';
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import "../restaurant/style.css";
 const RestaurantSignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -7,9 +10,16 @@ const RestaurantSignUp = () => {
   const [address, setAddress] = useState("");
   const [contact, setContact] = useState("");
   const [city, setCity] = useState("");
+
   const router = useRouter();
+  const [error, setError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const handleSignup = async () => {
+    if (password !== confirmPassword) {
+      setPasswordError(true);
+    }
+    return false;
     console.log("email", email);
     console.log("password", password);
     console.log("confirmPassword", confirmPassword);
@@ -31,12 +41,12 @@ const RestaurantSignUp = () => {
     });
     response = await response.json();
     console.log("response", response);
-    if(response.success) {
+    if (response.success) {
       console.log(response);
-      const {result} = response;
+      const { result } = response;
       delete result.password;
-      localStorage.setItem("restaurantUser",JSON.stringify(result));
-     router.push("/restaurant/dashboard");
+      localStorage.setItem("restaurantUser", JSON.stringify(result));
+      router.push("/restaurant/dashboard");
     }
   };
   return (
@@ -59,6 +69,11 @@ const RestaurantSignUp = () => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
+        {passwordError && (
+          <span className="input-error">
+            Password and Confirm Password not match
+          </span>
+        )}
       </div>
       <div className="input-wrapper">
         <input
@@ -68,6 +83,11 @@ const RestaurantSignUp = () => {
           value={confirmPassword}
           onChange={(event) => setConfirmPassword(event.target.value)}
         />
+        {passwordError && (
+          <span className="input-error">
+            Password and Confirm Password not match
+          </span>
+        )}
       </div>
       <div className="input-wrapper">
         <input
