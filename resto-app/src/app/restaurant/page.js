@@ -1,7 +1,7 @@
 "use client";
 import RestaurantHeader from "../_components/RestaurantHeader";
-import RestaurantLogin from "../_components/restaurantLogin";
-import RestaurantSignUp from "../_components/restaurantSignUp";
+import RestaurantLogin from "../_components/RestaurantLogin";
+import RestaurantSignUp from "../_components/RestaurantSignUp";
 import RestaurantFooter from "../_components/RestaurantFooter";
 import "./style.css";
 import { useState } from "react";
