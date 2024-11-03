@@ -18,6 +18,13 @@ const RestaurantSignUp = () => {
   const handleSignup = async () => {
     if (password !== confirmPassword) {
       setPasswordError(true);
+    }else{
+      setPasswordError(false);
+    }
+    if(!email || !password || !confirmPassword || !name || !address || !contact || !city){
+      setError(true);
+    }else{
+      setError(false);
     }
     return false;
     console.log("email", email);
@@ -60,6 +67,9 @@ const RestaurantSignUp = () => {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
+        {
+          error && !email && <span className="input-error">Please Enter valid Email</span>
+        }
       </div>
       <div className="input-wrapper">
         <input
@@ -71,9 +81,12 @@ const RestaurantSignUp = () => {
         />
         {passwordError && (
           <span className="input-error">
-            Password and Confirm Password not match
+           Password and Confirm password not Match
           </span>
         )}
+        {
+          error && !password && <span className="input-error">Please Enter Valid Password</span>
+        }
       </div>
       <div className="input-wrapper">
         <input
@@ -83,11 +96,14 @@ const RestaurantSignUp = () => {
           value={confirmPassword}
           onChange={(event) => setConfirmPassword(event.target.value)}
         />
-        {passwordError && (
+        {passwordError && 
           <span className="input-error">
             Password and Confirm Password not match
           </span>
-        )}
+        }
+         {
+          error && !password && <span className="input-error">Please Enter Valid Password</span>
+        }
       </div>
       <div className="input-wrapper">
         <input
